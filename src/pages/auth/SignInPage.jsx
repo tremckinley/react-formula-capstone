@@ -1,10 +1,13 @@
-import AuthForm from "./AuthForm"
+import AuthForm from "./AuthForm";
+import FormContainer from "../FormContainer";
+import { Link } from "react-router-dom";
 
 export default function SignInPage() {
-    return (<div className="flex justify-center">
-        <AuthForm 
-            submitMessage="Sign In"
-        />
-        </div>
+  return( 
+
+    <FormContainer>
+        <AuthForm submitMessage="Sign In" />
+    </FormContainer>
+
     )
 }

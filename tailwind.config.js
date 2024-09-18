@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        pridi: "Pridi",
-        noto: "Noto Sans",
+        bio: "BioRhyme",
+        noto: "Noto Sans"
       }
     },
   },
