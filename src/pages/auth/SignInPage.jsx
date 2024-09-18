@@ -7,6 +7,7 @@ export default function SignInPage() {
 
     <FormContainer>
         <AuthForm submitMessage="Sign In" />
+        <Link to="/sign-up" className="text-sm text-green-500 underline hover:text-green-400">create a new account</Link>
     </FormContainer>
 
     )
