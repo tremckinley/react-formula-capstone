@@ -7,9 +7,9 @@ export default function SignUpPage() {
     <FormContainer>
       <AuthForm
         fields={[
-          { label: "username", type: "text" },
-          { label: "password", type: "password" },
-          { label: "confirm password", type: "password" },
+          { label: "username", type: "text", autocomplete: "username" },
+          { label: "password", type: "password", autocomplete:"new-password" },
+          { label: "confirm password", type: "password", autocomplete:"new-password" },
         ]}
         submitMessage="Create Account"
       />
