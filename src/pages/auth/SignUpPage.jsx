@@ -12,6 +12,9 @@ export default function SignUpPage() {
           { label: "confirm password", type: "password", autocomplete:"new-password" },
         ]}
         submitMessage="Create Account"
+        onSubmit={(values) => {
+          console.log(values)
+        }}
       />
       <Link to="/" className="text-sm text-green-500 underline hover:text-green-400">sign in to existing account</Link>
     </FormContainer>
