@@ -1,6 +1,5 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useResolvedPath } from "react-router-dom";
-import * as userServices from "../../../services/users"
 
 const AuthForm = (props) => {
   let { fields, submitMessage, onSubmit } = props;
@@ -23,10 +22,9 @@ const AuthForm = (props) => {
   return (
     <form className="bg-white border border-slate-300 p-4 m-4 rounded-lg min-w-72"
       onSubmit={(e) => {
-          e.preventDefault();
-          console.log(values);
-          userServices.addUser(values)
-        }}
+        e.preventDefault();
+        onSubmit(values);
+      }}
     >
       {fields.map((field) =>
         <div key={field.label} className="flex flex-col my-4 text-stone-500">
@@ -42,5 +40,5 @@ const AuthForm = (props) => {
     </form>
   );
 };
-
+ 
 export default AuthForm;
