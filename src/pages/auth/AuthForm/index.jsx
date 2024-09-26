@@ -10,6 +10,7 @@ const AuthForm = (props) => {
     ]
   }
 
+  const [isLoading, setIsLoading] = useState(false);
 
   const [values, setValues] = useState(() => {
     const initialState = {};
@@ -21,9 +22,11 @@ const AuthForm = (props) => {
 
   return (
     <form className="bg-white border border-slate-300 p-4 m-4 rounded-lg min-w-72"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        onSubmit(values);
+        setIsLoading(true)
+        await onSubmit(values);
+        setIsLoading(false);
       }}
     >
       {fields.map((field) =>
@@ -36,7 +39,9 @@ const AuthForm = (props) => {
           />
         </div>
       )}
-      <button className="w-full bg-emerald-700 rounded-lg py-2 text-white font-bold">{submitMessage ? submitMessage : "Submit"}</button>
+      <button className="w-full bg-emerald-700 rounded-lg py-2 text-white font-bold">
+      {submitMessage ? submitMessage : "Submit"} {isLoading && (<i className="fa fa-spinner animate-spin"></i>)}
+    </button>
     </form>
   );
 };

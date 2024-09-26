@@ -14,7 +14,11 @@ const apiFetch = (method, path, body = null) => {
     options.body = JSON.stringify(body);
   }
 
-  return fetch(VITE_API_BASE_URL + path, options);
+
+  const hello = fetch(VITE_API_BASE_URL + path, options);
+  console.log(hello)
+  return hello;
+  
 };
 
 export default apiFetch;
