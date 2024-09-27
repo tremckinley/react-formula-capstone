@@ -1,12 +1,13 @@
 import AuthForm from "./AuthForm";
 import FormContainer from "../FormContainer";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as userServices from "services/users"
 
 
 export default function SignUpPage() {
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   return (
     <FormContainer>
@@ -41,7 +42,12 @@ export default function SignUpPage() {
             setErrorMessage(data.error)
           } else {
             setErrorMessage('');
-            alert('user created successfully!')
+            // navigate to sign-in page with location state
+            navigate("/", {
+              state: {
+                newAccount: true,
+              },
+            });
           }
         }}
       />

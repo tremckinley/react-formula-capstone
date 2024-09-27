@@ -1,5 +1,6 @@
-import apiFetch from "./apiFetch";
+import apiFetch from "./apiFetch"; 
 
 export const addUser = ({username, password}) => apiFetch("POST", "/users", {username, password,});
-//const signInUser = (values) => {apiFetch()}
+
+export const signInUser = ({username, password}) => apiFetch("POST", "/users/session", {username, password,});
 

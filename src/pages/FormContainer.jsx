@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function FormContainer(props) {
     const {children} = props;
 
@@ -15,7 +16,7 @@ export default function FormContainer(props) {
             <div className="flex flex-1 h-screen flex-col items-center font-noto justify-center bg-emerald-50 w-full">
                 <div className="flex flex-col items-center mb-10">
                     <img src="https://static-task-assets.react-formula.com/capstone_logo_dark.png" alt="rica's plants logo"></img>
-                    <h1 className="text-4xl text-emerald-800 font-bio">Rica's Plants</h1>
+                    <h1 className="text-4xl text-emerald-800 font-bio">Rica&apos;s Plants</h1>
                 </div>
                 {children}
             </div>
