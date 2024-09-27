@@ -16,7 +16,6 @@ const apiFetch = (method, path, body = null) => {
 
 
   const hello = fetch(VITE_API_BASE_URL + path, options);
-  console.log(hello)
   return hello;
   
 };
