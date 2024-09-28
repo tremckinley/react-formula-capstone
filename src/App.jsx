@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SignInPage/>} />
         <Route path="/sign-up" element={<SignUpPage/>} />
-        <Route path="plantlist" element={<PlantListPage/>} />
+        <Route path="plants" element={<PlantListPage/>} />
       </Routes>
     </BrowserRouter>
     </SessionContext.Provider>
