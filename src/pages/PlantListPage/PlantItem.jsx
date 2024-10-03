@@ -1,29 +1,33 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import clsx from "clsx";
 
 const POT_COLORS = {
-  stone: "text-stone-200",
-  slate: "text-slate-300",
-  sky: "text-sky-700",
-  black: "text-gray-600",
-  white: "text-gray-50",
-  amber: "text-amber-600",
+  stone: "bg-stone-200",
+  slate: "bg-slate-300",
+  sky: "bg-sky-700",
+  black: "bg-gray-600",
+  white: "bg-gray-50",
+  amber: "bg-amber-600",
 };
 
 const PlantItem = (props) => {
   const { plant } = props;
   const imageArray = plant.images;
-  const randomIndex = Math.floor(Math.random() * plant.images.length);
-  const [selectedImage, setSelectedImage] = useState(imageArray[randomIndex]);
+  const randomIndex = (array) => {
+    return Math.floor(Math.random() * (array.length)) 
+  };
+  const [selectedImageIdx, setSelectedImageIdx] = useState(randomIndex(imageArray));
 
+  console.log(imageArray[selectedImageIdx]["src"])
 
   return (
-    <div className="flex flex-col items-center m-2 object-cover text-emerald-800 text-lg border">
+    <div className="flex flex-col items-center m-2 object-cover text-emerald-800 text-lg">
       <div className="h-64 w-72">
         <img
           className="object-cover h-full w-full shadow-lg"
-          src={selectedImage["src"]}
-          alt="hello"
+          src={imageArray[selectedImageIdx]["src"]}
+          alt="plant in colored pot"
         />
       </div>
       <div className="w-full flex justify-between p-1 font-bio font-semibold">
@@ -31,19 +35,18 @@ const PlantItem = (props) => {
         <div>{`$${plant.price}`}</div>
       </div>
       <div className="flex justify-between w-full px-2">
-        <div className="text-sm">{selectedImage["pot_color"]}</div>
-        <div>
+        <div className="text-sm">{imageArray[selectedImageIdx]["pot_color"]}</div>
+        <div className="flex">
           {imageArray.map((image, idx) => {
             return (
-              <i key={idx} onMouseEnter={() => {
-                setSelectedImage(image)
+              <div key={idx} onMouseEnter={() => {
+                setSelectedImageIdx(idx)
               }
               }
-                className={
-                  "fa-solid fa-circle mx-1 " + POT_COLORS[image.pot_color] + (selectedImage.src == image.src ? " border-2 border-emerald-600 rounded-full" : "")
+                className={clsx("rounded-full h-5 w-5 mx-1 border border-slate-300", POT_COLORS[image.pot_color], imageArray[selectedImageIdx]["pot_color"] == image["pot_color"] && ("outline outline-emerald-600 outline-offset-2"))
                 }>
 
-              </i>)
+              </div>)
           })}
         </div>
       </div>
