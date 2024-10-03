@@ -19,7 +19,7 @@ const PlantItem = (props) => {
   };
   const [selectedImageIdx, setSelectedImageIdx] = useState(randomIndex(imageArray));
 
-  console.log(imageArray[selectedImageIdx]["src"])
+  
 
   return (
     <div className="flex flex-col items-center m-2 object-cover text-emerald-800 text-lg">

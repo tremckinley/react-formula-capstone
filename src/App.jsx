@@ -3,9 +3,11 @@ import { BrowserRouter, Routes, Route,  } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import SignInPage from "./pages/auth/SignInPage"
 import SignUpPage from "./pages/auth/SignUpPage"
+import PlantShowPage from "pages/PlantShowPage";
 import * as userServices from "services/users"
 import SessionContext from "contexts/SessionContext";
 import PlantListPage from "pages/PlantListPage";
+
 
 
 

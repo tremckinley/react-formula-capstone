@@ -1,4 +1,4 @@
 import apiFetch from "./apiFetch";
-import { useCallback } from "react";
 
 export const getPlants = () => apiFetch("GET", "/plants");
+export const getPlantInfo = (plantID) => apiFetch("GET",`/plants/${plantID}`)
