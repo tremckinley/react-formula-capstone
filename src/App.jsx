@@ -33,6 +33,7 @@ function App() {
         <Route path="/" element={<SignInPage/>} />
         <Route path="/sign-up" element={<SignUpPage/>} />
         <Route path="plants" element={<PlantListPage/>} />
+        <Route path="plants/:plantId" element={<PlantShowPage/>} />
       </Routes>
     </BrowserRouter>
     </SessionContext.Provider>
