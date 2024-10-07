@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import SessionContext from "contexts/SessionContext";
+import { Link } from "react-router-dom";
 
 
 
@@ -12,10 +13,12 @@ const NavBar = () => {
     return (
         <div className="flex justify-center w-full bg-emerald-700 p-2 h-24 shadow-lg shadow-gray-400" onMouseLeave={() => setMenuOpen(false)}>
             <div className="w-full  max-w-5xl flex justify-between items-center">
-                <div className="flex items-center">
-                    <img className="px-4 h-20" src="https://static-task-assets.react-formula.com/capstone_logo_light.png" alt="logo" />
-                    <div className="font-bio text-white text-3xl">Rica&apos;s Plants</div>
-                </div>
+                <Link to="/" >
+                    <div className="flex items-center">
+                        <img className="px-4 h-20" src="https://static-task-assets.react-formula.com/capstone_logo_light.png" alt="logo" />
+                        <div className="font-bio text-white text-2xl md:text-3xl">Rica&apos;s Plants</div>
+                    </div>
+                </Link>
                 <div className="relative h-full" >
                     <button className="h-full" onClick={() => setMenuOpen(!menuOpen)}>
                         <div className="px-2 flex text-lg text-emerald-300 items-center font-semibold">
