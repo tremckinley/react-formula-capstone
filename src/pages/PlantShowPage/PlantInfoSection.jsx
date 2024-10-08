@@ -2,12 +2,12 @@
 import { useState } from "react";
 import PlantHeaderSection from "./PlantHeaderSection";
 import BenefitBox from "./BenefitBox";
-import PlantColorPicker from "./PlantColorPicker";
+import PlantPurchaseDetails from "./PlantPurchaseDetails";
 
 const PlantInfoSection = (props) => {
     const { featuredPlant } = props;
-    const [imageIdx, setImageIdx] = useState(0)
-    console.log(featuredPlant)
+    const [ imageIdx, setImageIdx ] = useState(0)
+    const [ quantity, setQuantity ] = useState(1)
 
     return (
         <div className="flex justify-center min-h-screen bg-green-50">
@@ -23,7 +23,7 @@ const PlantInfoSection = (props) => {
                   className="h-auto w-80 object-cover shadow-lg rounded-lg"
                 />
                 <div className="md:hidden">
-                    <PlantColorPicker featuredPlant={featuredPlant} imageIdx={imageIdx} setImageIdx={setImageIdx} />
+                    <PlantPurchaseDetails featuredPlant={featuredPlant} imageIdx={imageIdx} setImageIdx={setImageIdx} quantity={quantity} setQuantity={setQuantity} />
                 </div>
                 <div className="flex h-auto w-80 mt-5 text-stone-500 text-sm justify-between">
                   <BenefitBox
@@ -44,7 +44,9 @@ const PlantInfoSection = (props) => {
                   <PlantHeaderSection featuredPlant={featuredPlant} />
                 </div>
                 <p className="text-stone-500 leading-relaxed my-5">{featuredPlant.care_instructions}</p>
-                <PlantColorPicker featuredPlant={featuredPlant} imageIdx={imageIdx} setImageIdx={setImageIdx} />
+                <div className="hidden md:flex">
+                <PlantPurchaseDetails featuredPlant={featuredPlant} imageIdx={imageIdx} setImageIdx={setImageIdx} quantity={quantity} setQuantity={setQuantity} />
+                </div>
               </div>
             </div>
 
