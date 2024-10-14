@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import NavBar from "shared-components/NavBar";
+import NavBar from "shared-components/NavBar/index.jsx";
 import PlantItem from "./PlantItem.jsx"
 import SignOutRedirect from "shared-components/SignOutRedirect";
 import * as plantService from "services/plant";
