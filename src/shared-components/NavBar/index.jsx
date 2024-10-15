@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import SessionContext from "contexts/SessionContext";
 import { Link } from "react-router-dom";
 import CartModal from "./modals/CartModal";
-import clsx from "clsx";
+
 
 
 const NavBar = () => {
