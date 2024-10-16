@@ -12,9 +12,9 @@ export default function PlantListPage() {
     const fetchPlants = useCallback(async () => {
         setLoading(true)
         const response = await plantService.getPlants();
-        console.log(response.status)
+        //console.log(response.status)
         const data = await response.json();
-        console.log("this is the data", data)
+        //console.log("this is the data", data)
         setPlantList(data);
         setLoading(false)
     }, [])

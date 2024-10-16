@@ -34,9 +34,7 @@ export default function SignInPage() {
             if (response.status == 201) {
               setErrorMessage('')
               console.log("Sign-in successful!")
-              console.log(data)
               sessionContext.signIn(data.capstone_session_token);
-              console.log(sessionContext.sessionUsername)
             } else {
               setErrorMessage(data.error);
             }
