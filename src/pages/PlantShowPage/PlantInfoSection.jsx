@@ -3,6 +3,8 @@ import { useState } from "react";
 import PlantHeaderSection from "./PlantHeaderSection";
 import BenefitBox from "./BenefitBox";
 import PlantPurchaseDetails from "./PlantPurchaseDetails";
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 
 const PlantInfoSection = (props) => {
     const { featuredPlant } = props;
@@ -17,11 +19,13 @@ const PlantInfoSection = (props) => {
                 <PlantHeaderSection featuredPlant={featuredPlant} />
               </div>
               <div className="flex flex-col items-center py-5">
-                <img
-                  src={featuredPlant.images[imageIdx]["src"]}
-                  alt={`A picture of a ${featuredPlant}`}
-                  className="h-auto w-80 object-cover shadow-lg rounded-lg"
-                />
+                <Zoom>
+                  <img
+                    src={featuredPlant.images[imageIdx]["src"]}
+                    alt={`A picture of a ${featuredPlant}`}
+                    className="h-auto w-80 object-cover shadow-lg rounded-lg"
+                  />
+                </Zoom>
                 <div className="md:hidden">
                     <PlantPurchaseDetails featuredPlant={featuredPlant} imageIdx={imageIdx} setImageIdx={setImageIdx} quantity={quantity} setQuantity={setQuantity} />
                 </div>
