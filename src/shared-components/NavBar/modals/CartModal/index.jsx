@@ -1,5 +1,6 @@
 import { RemoveScroll } from "react-remove-scroll";
 import { useContext, useEffect, useState, useCallback } from "react";
+import { motion } from "framer-motion"
 import SessionContext from "contexts/SessionContext";
 import CartItem from "./CartItem";
 import LoadingSpinner from "shared-components/LoadingSpinner";
@@ -40,14 +41,17 @@ const CartModal = (props) => {
   return (
     <RemoveScroll>
       <div className="fixed top-0 left-0 w-full h-screen bg-black/30 backdrop-blur-sm">
-        <div className="md:max-w-xl w-full h-screen bg-green-50 float-end flex flex-col">
+        <motion.div 
+          className="md:max-w-xl w-full h-screen bg-green-50 float-end flex flex-col"
+          initial={{opacity: 0, translateX: "100%"}} animate={{ opacity: 1, translateX: 0 }} transition={{ duration: 0.2 }}
+        >
           <div className="flex justify-between w-full bg-emerald-700 p-2 h-24 items-center">
             <div className="text-3xl text-center w-full text-white font-bio">
               {`${sessionUsername}'s Cart`}
             </div>
             <button
               onClick={onClick}
-              className="float-end text-black/50 hover:text-black/40 text-2xl m-4"
+              className="text-black/50 hover:text-black/40 text-2xl m-4"
             >
               <i className="fa-solid fa-circle-xmark"></i>
             </button>
@@ -85,7 +89,7 @@ const CartModal = (props) => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </RemoveScroll>
   );

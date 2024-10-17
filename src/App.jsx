@@ -10,14 +10,13 @@ import PlantListPage from "pages/PlantListPage";
 import ScrollToTop from "shared-components/ScrollToTop";
 
 
-
-
 function App() {
   const [token, setToken] = useState(() => 
     userServices.getSessionTokenStorage()
   );
 
   return (
+
     <SessionContext.Provider value = {{
       signIn: (capstoneSessionToken) => {
         setToken(capstoneSessionToken);
@@ -39,6 +38,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     </SessionContext.Provider>
+
   );
 }
 

@@ -5,4 +5,4 @@ export default function LoadingSpinner() {
             <div>Please Wait...</div>
         </div>
     )
-}
+};

@@ -8,7 +8,6 @@ const apiFetch = (method, path, body = null) => {
     headers: {
       Authorization: "Bearer " + VITE_API_KEY,
       "Content-Type": "application/json",
-      
     },
   };
 

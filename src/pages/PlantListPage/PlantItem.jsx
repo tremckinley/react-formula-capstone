@@ -2,6 +2,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { POT_COLORS } from "services/potColors";
 
 const PlantItem = (props) => {
@@ -14,7 +15,10 @@ const PlantItem = (props) => {
   
   
   return (
-    <div className="flex flex-col items-center m-2 object-cover text-emerald-800 text-lg">
+    <motion.div 
+      className="flex flex-col items-center m-2 object-cover text-emerald-800 text-lg"
+      initial={{opacity: 0, translateY: "-50%"}} whileInView={{opacity: 1, translateY: 0}} viewport={{amount: 0.8, once: true}} transition={{duration: 0.5}}
+    >
       <div className="h-64 w-72">
         <Link to={`/plants/${plant.id}`} >
           <img
@@ -44,7 +48,7 @@ const PlantItem = (props) => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
