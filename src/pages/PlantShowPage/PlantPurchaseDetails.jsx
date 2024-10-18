@@ -16,6 +16,7 @@ const PlantPurchaseDetails = (props) => {
                 <i className="fa fa-fill text-2xl"></i>
                 <p className="font-bold mx-2 text-emerald-800">Select Pot Color:</p>
             </div>
+            {/*iterartes over color options to select cicles*/}
             <div className="flex pl-10">
                 {featuredPlant.images.map((image, idx) => 
                     <div key={idx} className="mx-2 flex flex-col items-center" 
@@ -36,6 +37,7 @@ const PlantPurchaseDetails = (props) => {
                         <i className="fa fa-plus"></i>
                     </button>
                 </div>
+                {/*Add to cart button */}
                 <button 
                     className="bg-emerald-700 px-4 py-1 rounded-full text-white flex items-center justify-around"
                     onClick={async () => {
@@ -50,10 +52,12 @@ const PlantPurchaseDetails = (props) => {
                         setLoading(false);
                     }}
                 >
+                    {/*Loading spinner */}
                     <i className={clsx("fa-solid", loading ? "fa-spinner animate-spin" : "fa-cart-plus")}></i>
                     <div className="pl-2">Add to cart</div>
                 </button>
             </div>
+            {/*Error message if ordering more than 10 */}
             <div className="text-xs text-red-600 text-center italic">{quantity === 10 && ("10 max per order")}</div>
         </div>
     );

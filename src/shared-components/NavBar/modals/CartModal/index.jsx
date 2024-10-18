@@ -56,7 +56,7 @@ const CartModal = (props) => {
               <i className="fa-solid fa-circle-xmark"></i>
             </button>
           </div>
-          <div className="flex flex-col flex-1  ">
+          <div className="flex flex-col flex-1 overflow-auto">
             <div className="mx-auto mt-10 flex flex-col flex-1 items-center max-w-lg w-full">
               {cartLoading ? (
                 <LoadingSpinner />
