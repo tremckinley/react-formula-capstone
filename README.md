@@ -4,6 +4,8 @@ This was the capstone project from React Formula. I used this course to build my
 React was something I struggled to self-teach until I found this course. By the end of it, I was completing entire modules my way without the help of walkthroughs or hints. 
 This course included the use of several modules as well. Please enjoy using this mock web store.
 
+I have www.React-Formula.com to thank for this project.
+
 ## Tools used
 - React
 - Vite
