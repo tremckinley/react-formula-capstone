@@ -6,6 +6,8 @@ This course included the use of several modules as well. Please enjoy using this
 
 I have www.React-Formula.com to thank for this project.
 
+![](screenshot.png)
+
 ## Tools used
 - React
 - Vite
