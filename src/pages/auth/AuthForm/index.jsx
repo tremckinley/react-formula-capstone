@@ -21,7 +21,7 @@ const AuthForm = (props) => {
   });
 
   return (
-    <form className="bg-white border border-slate-300 p-4 m-4 rounded-lg min-w-72"
+    <form className="bg-white border border-slate-300 p-3 m-4 rounded-lg min-w-60 "
       onSubmit={async (e) => {
         e.preventDefault();
         setIsLoading(true)
@@ -30,7 +30,7 @@ const AuthForm = (props) => {
       }}
     >
       {fields.map((field) =>
-        <div key={field.label} className="flex flex-col my-4 text-stone-500">
+        <div key={field.label} className="flex flex-col my-2 text-stone-500">
           <label htmlFor={field.label}>{field.label}</label>
           <input id={field.label} type={field.type} autoComplete={field.autocomplete}
             className="px-2 py-1 rounded-md bg-slate-50 border border-slate-500 focus:outline-emerald-600 text-stone-600"

@@ -26,6 +26,7 @@ export default function SignInPage() {
           location.state?.signedOut &&
           <div className="text-orange-800 bg-orange-200 border border-emerald-800 px-4 py-1 rounded-lg text-center text-sm">sign-out successfull!</div>
         }
+        <div className="flex flex-wrap items-center justify-center">
         <AuthForm
           submitMessage="Sign In"
           onSubmit={async (values) => {
@@ -41,6 +42,8 @@ export default function SignInPage() {
           }}
 
         />
+        <video src="../../demo_vid.mp4" height={200} width={200} controls title="demo video"></video>
+        </div>
         <Link to="/sign-up" className="text-sm text-green-500 underline hover:text-green-400">create a new account</Link>
       </FormContainer>
     </SignInRedirect>
