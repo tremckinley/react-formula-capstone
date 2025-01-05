@@ -27,25 +27,24 @@ export default function SignInPage() {
           <div className="text-orange-800 bg-orange-200 border border-emerald-800 px-4 py-1 rounded-lg text-center text-sm">sign-out successfull!</div>
         }
         <div className="flex flex-wrap items-center justify-center">
-        <AuthForm
-          submitMessage="Sign In"
-          onSubmit={async (values) => {
-            const response = await userServices.signInUser({ username: values.username, password: values.password, })
-            const data = await response.json()
-            if (response.status == 201) {
-              setErrorMessage('')
-              console.log("Sign-in successful!")
-              sessionContext.signIn(data.capstone_session_token);
-            } else {
-              setErrorMessage(data.error);
-            }
-          }}
+          <AuthForm
+            submitMessage="Sign In"
+            onSubmit={async (values) => {
+              const response = await userServices.signInUser({ username: values.username, password: values.password, })
+              const data = await response.json()
+              if (response.status == 201) {
+                setErrorMessage('')
+                console.log("Sign-in successful!")
+                sessionContext.signIn(data.capstone_session_token);
+              } else {
+                setErrorMessage(data.error);
+              }
+            }}
 
-        />
-        <div className="flex flex-col">
-        <video src="../../demo_vid.mp4" width={200} controls title="demo video" className="border-2 border-emerald-800"></video>
-        <caption className="w-full text-sm text-green-800">Demo Video</caption>
-        </div>
+          />
+          <div className="flex flex-col">
+            <iframe className="border-2 border-emerald-800" width="300" src="https://www.youtube.com/embed/00bAyU99H6Q?si=enUJJhLJauo9pdtm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
         <Link to="/sign-up" className="text-sm text-green-500 underline hover:text-green-400">create a new account</Link>
       </FormContainer>
