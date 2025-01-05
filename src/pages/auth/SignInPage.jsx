@@ -42,7 +42,10 @@ export default function SignInPage() {
           }}
 
         />
-        <video src="../../demo_vid.mp4" height={200} width={200} controls title="demo video"></video>
+        <div className="flex flex-col">
+        <video src="../../demo_vid.mp4" width={200} controls title="demo video" className="border-2 border-emerald-800"></video>
+        <caption className="w-full text-sm text-green-800">Demo Video</caption>
+        </div>
         </div>
         <Link to="/sign-up" className="text-sm text-green-500 underline hover:text-green-400">create a new account</Link>
       </FormContainer>
