@@ -1,0 +1,29 @@
+
+    Users {
+        int id PK
+        string username
+        string password_hash
+    }
+
+    Plants {
+        int id PK
+        string name
+        string botanical_name
+        decimal price
+        text care_instructions
+    }
+
+    PlantImages {
+        int id PK
+        int plant_id FK
+        string src
+        string pot_color
+    }
+
+    CartItems {
+        int id PK
+        int user_id FK
+        int plant_id FK
+        int quantity
+        string pot_color
+    }
